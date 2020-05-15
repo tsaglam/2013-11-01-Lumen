@@ -1,3 +1,5 @@
+package lumen;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,7 +16,7 @@ import javax.swing.JPanel;
 public class Lumen {
 
     public static void main(String[] args) {
-        Lumen lumen = new Lumen(0);
+        Lumen lumen = new Lumen(1);
         lumen.start();
     }
 
@@ -70,8 +72,9 @@ public class Lumen {
         if (shiftCounter >= speed) {
             shiftCounter = 0;
             currentColor = currentColor + 0.0125; // +0.05
-            if (currentColor >= 1.0)
+            if (currentColor >= 1.0) {
                 currentColor = 0.0;
+            }
         }
         h = (float) currentColor;
         return Color.getHSBColor(h, (float) (Math.random() / 2 + 0.25), (float) (Math.random() / 2 + 0.25));
